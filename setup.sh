@@ -3,7 +3,7 @@
 echo -n "Home or work setup > "
 read setupType
 echo "You entered: $setupType"
-if [ "$setupType"!="work" ] || [ "$setupType"!="home" ]; then
+if [ $setupType -ne "work" ] || [ $setupType -ne "home" ]; then
     echo "You must enter either home or work."
 else
     if [ "$setupType"=="work" ]; then
