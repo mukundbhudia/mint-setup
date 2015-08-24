@@ -3,12 +3,13 @@
 echo -n "Home or work setup > "
 read setupType
 echo "You entered: $setupType"
+# TODO: Fix '-ne' usage. Need a string comparison operator
 if [ $setupType -ne "work" ] || [ $setupType -ne "home" ]; then
     echo "You must enter either home or work."
 else
-    if [ "$setupType"=="work" ]; then
+    if [ $setupType -eq "work" ]; then
     echo "Work setup installing..."
-    elif [ "$setupType"=="home" ]; then
+elif [ $setupType -eq "home" ]; then
     echo "Home setup installing..."
     fi
     # Install PPAs
