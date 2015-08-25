@@ -22,9 +22,11 @@ else
         fi
         # Generic setup
         echo "Installing general software..."
+        add-apt-repository ppa:git-core/ppa
         add-apt-repository ppa:webupd8team/atom
         add-apt-repository ppa:danielrichter2007/grub-customizer
         apt-get update
+        apt-get install git
         apt-get install atom
         apt-get install grub-customizer
         apt-get install gufw
