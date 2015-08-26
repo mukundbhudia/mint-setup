@@ -57,5 +57,22 @@ else
         wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
         apt-get update
         apt-get install google-chrome-stable
+
+        # Install atom packages
+        apm install color-picker
+        apm install file-icons
+        apm install git-blame
+        apm install git-plus
+        apm install highlight-line
+        apm install highlight-selected
+        apm install linter
+        apm install linter-jshint
+        apm install linter-php
+        apm install linter
+        apm install linter-csslint
+        apm install linter-javac
+        apm install minimap
+        apm install monokai
+        apm install todo-show
     fi
 fi
