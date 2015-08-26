@@ -33,11 +33,17 @@ else
         apt-get install gitg
         apt-get install gparted
 
-        #Download + install mysql workbench
+        # Download + install avg antivirus
+        wget http://download.avgfree.com/filedir/inst/avg2013flx-r3118-a6926.i386.deb
+        apt-get install avg2013flx-r3118-a6926.i386.deb
+        # Disable daemons running on startup
+        update-rc.d avgd disable
+
+        # Download + install mysql workbench
         wget http://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.3-1ubu1404-amd64.deb
         apt-get install mysql-workbench-community-6.3.3-1ubu1404-amd64.deb
 
-        #Install mysql cli
+        # Install mysql cli
         apt-get install mysql-client-core-5.6
     fi
 fi
