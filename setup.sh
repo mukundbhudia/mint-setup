@@ -32,6 +32,8 @@ else
         apt-get install gufw
         apt-get install gitg
         apt-get install gparted
+        apt-get install skype
+        apt-get install openvpn
 
         # Download + install avg antivirus
         wget http://download.avgfree.com/filedir/inst/avg2013flx-r3118-a6926.i386.deb
@@ -45,5 +47,15 @@ else
 
         # Install mysql cli
         apt-get install mysql-client-core-5.6
+
+        # Install nodejs
+        curl --silent --location https://deb.nodesource.com/setup_0.12 | sudo bash -
+        apt-get install --yes nodejs
+
+        # Install google chrome
+        sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+        wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        apt-get update
+        apt-get install google-chrome-stable
     fi
 fi
