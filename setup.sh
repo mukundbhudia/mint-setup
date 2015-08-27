@@ -19,6 +19,7 @@ else
             echo "Work setup installing..."
         elif [ $setupType -eq "home" ]; then
             echo "Home setup installing..."
+            apt-get install libav-tools
         fi
         # Generic setup
         echo "Installing general software..."
@@ -34,6 +35,7 @@ else
         apt-get install gparted
         apt-get install skype
         apt-get install openvpn
+        apt-get install wipe
 
         # Download + install avg antivirus
         wget http://download.avgfree.com/filedir/inst/avg2013flx-r3118-a6926.i386.deb
