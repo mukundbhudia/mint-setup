@@ -30,6 +30,8 @@ else
         apt-get install gitg
         apt-get install gparted
         apt-get install skype
+        apt-get install vlc
+        apt-get install opera
         apt-get install openvpn
         apt-get install wipe
 
