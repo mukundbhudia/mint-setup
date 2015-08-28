@@ -15,12 +15,6 @@ else
     if [ $setupType -ne "work" ] || [ $setupType -ne "home" ]; then
         echo "You must enter either home or work."
     else
-        if [ $setupType -eq "work" ]; then
-            echo "Work setup installing..."
-        elif [ $setupType -eq "home" ]; then
-            echo "Home setup installing..."
-            apt-get install libav-tools
-        fi
         # Generic setup
         echo "Installing general software..."
         add-apt-repository ppa:git-core/ppa
@@ -76,5 +70,19 @@ else
         apm install minimap
         apm install monokai
         apm install todo-show
+
+        # Environment specific setup
+        if [ $setupType -eq "work" ]; then
+            echo "Work setup installing..."
+        elif [ $setupType -eq "home" ]; then
+            echo "Home setup installing..."
+            apt-get install libav-tools
+            # Install telegram
+            # Might be https://tdesktop.com/linux
+            wget https://updates.tdesktop.com/tlinux/tsetup.0.8.52.tar.xz
+            tar -xf tsetup.0.8.52.tar.xz
+            cd Telegram/
+            ./Telegram
+        fi
     fi
 fi
