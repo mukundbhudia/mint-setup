@@ -20,6 +20,7 @@ else
         elif [ $setupType -eq "home" ]; then
             echo "Home setup installing..."
             apt-get install libav-tools
+            apt-get install compizconfig-settings-manager
         fi
         # Generic setup
         echo "Installing general software..."
@@ -36,6 +37,8 @@ else
         apt-get install skype
         apt-get install openvpn
         apt-get install wipe
+        apt-get install playonlinux
+        apt-get install filezilla
 
         # Download + install avg antivirus
         wget http://download.avgfree.com/filedir/inst/avg2013flx-r3118-a6926.i386.deb
