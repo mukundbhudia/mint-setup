@@ -15,26 +15,23 @@ else
     if [ $setupType -ne "work" ] || [ $setupType -ne "home" ]; then
         echo "You must enter either home or work."
     else
-        if [ $setupType -eq "work" ]; then
-            echo "Work setup installing..."
-        elif [ $setupType -eq "home" ]; then
-            echo "Home setup installing..."
-            apt-get install libav-tools
-            apt-get install compizconfig-settings-manager
-        fi
         # Generic setup
         echo "Installing general software..."
         add-apt-repository ppa:git-core/ppa
         add-apt-repository ppa:webupd8team/atom
+        add-apt-repository ppa:webupd8team/sublime-text-2
         add-apt-repository ppa:danielrichter2007/grub-customizer
         apt-get update
         apt-get install git
         apt-get install atom
+        apt-get install sublime-text
         apt-get install grub-customizer
         apt-get install gufw
         apt-get install gitg
         apt-get install gparted
         apt-get install skype
+        apt-get install vlc
+        apt-get install opera
         apt-get install openvpn
         apt-get install wipe
         apt-get install playonlinux
@@ -79,5 +76,26 @@ else
         apm install minimap
         apm install monokai
         apm install todo-show
+
+        # Environment specific setup
+        if [ $setupType -eq "work" ]; then
+            echo "Work setup installing..."
+        elif [ $setupType -eq "home" ]; then
+            echo "Home setup installing..."
+
+            apt-get install libav-tools
+            apt-get install compizconfig-settings-manager
+
+            # Install telegram
+            # Might be https://tdesktop.com/linux
+            wget https://updates.tdesktop.com/tlinux/tsetup.0.8.52.tar.xz
+            tar -xf tsetup.0.8.52.tar.xz
+            cd Telegram/
+            ./Telegram
+
+            # Install Dropbox
+            wget "https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.02.12_amd64.deb"
+            apt-get install dropbox_2015.02.12_amd64.deb
+        fi
     fi
 fi
