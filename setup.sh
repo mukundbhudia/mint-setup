@@ -77,6 +77,9 @@ else
         apm install monokai
         apm install todo-show
 
+        # Configure git adding git alias 'lg' to show a nice git tree
+        git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) %an%Creset' --abbrev-commit"
+
         # Environment specific setup
         if [ $setupType -eq "work" ]; then
             echo "Work setup installing..."
