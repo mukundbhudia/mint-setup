@@ -28,6 +28,7 @@ else
         apt-get install grub-customizer
         apt-get install gufw
         apt-get install gitg
+        apt-get install meld
         apt-get install gparted
         apt-get install skype
         apt-get install vlc
