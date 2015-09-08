@@ -38,6 +38,13 @@ else
         apt-get install playonlinux
         apt-get install filezilla
 
+        # Configure git and meld
+        git config --global diff.tool meld
+        git config --global difftool.prompt false
+
+        git config --global merge.tool meld
+        git config --global mergetool.prompt false
+
         # Download + install avg antivirus
         wget http://download.avgfree.com/filedir/inst/avg2013flx-r3118-a6926.i386.deb
         apt-get install avg2013flx-r3118-a6926.i386.deb
