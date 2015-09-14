@@ -22,21 +22,21 @@ else
         add-apt-repository ppa:webupd8team/sublime-text-2
         add-apt-repository ppa:danielrichter2007/grub-customizer
         apt-get update
-        apt-get install git
-        apt-get install atom
-        apt-get install sublime-text
-        apt-get install grub-customizer
-        apt-get install gufw
-        apt-get install gitg
-        apt-get install meld
-        apt-get install gparted
-        apt-get install skype
-        apt-get install vlc
-        apt-get install opera
-        apt-get install openvpn
-        apt-get install wipe
-        apt-get install playonlinux
-        apt-get install filezilla
+        apt-get -y install git
+        apt-get -y install atom
+        apt-get -y install sublime-text
+        apt-get -y install grub-customizer
+        apt-get -y install gufw
+        apt-get -y install gitg
+        apt-get -y install meld
+        apt-get -y install gparted
+        apt-get -y install skype
+        apt-get -y install vlc
+        apt-get -y install opera
+        apt-get -y install openvpn
+        apt-get -y install wipe
+        apt-get -y install playonlinux
+        apt-get -y install filezilla
 
         # Configure git and meld
         git config --global diff.tool meld
@@ -47,26 +47,26 @@ else
 
         # Download + install avg antivirus
         wget http://download.avgfree.com/filedir/inst/avg2013flx-r3118-a6926.i386.deb
-        apt-get install avg2013flx-r3118-a6926.i386.deb
+        apt-get -y install avg2013flx-r3118-a6926.i386.deb
         # Disable daemons running on startup
         update-rc.d avgd disable
 
         # Download + install mysql workbench
         wget http://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.3-1ubu1404-amd64.deb
-        apt-get install mysql-workbench-community-6.3.3-1ubu1404-amd64.deb
+        apt-get -y install mysql-workbench-community-6.3.3-1ubu1404-amd64.deb
 
         # Install mysql cli
-        apt-get install mysql-client-core-5.6
+        apt-get -y install mysql-client-core-5.6
 
         # Install nodejs
         curl --silent --location https://deb.nodesource.com/setup_0.12 | sudo bash -
-        apt-get install --yes nodejs
+        apt-get -y install --yes nodejs
 
         # Install google chrome
         sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
         wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-        apt-get update
-        apt-get install google-chrome-stable
+        apt-get -y update
+        apt-get -y install google-chrome-stable
 
         # Install atom packages
         apm install color-picker
@@ -94,8 +94,8 @@ else
         elif [ $setupType -eq "home" ]; then
             echo "Home setup installing..."
 
-            apt-get install libav-tools
-            apt-get install compizconfig-settings-manager
+            apt-get -y install libav-tools
+            apt-get -y install compizconfig-settings-manager
 
             # Install telegram
             # Might be https://tdesktop.com/linux
@@ -106,7 +106,7 @@ else
 
             # Install Dropbox
             wget "https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.02.12_amd64.deb"
-            apt-get install dropbox_2015.02.12_amd64.deb
+            apt-get -y install dropbox_2015.02.12_amd64.deb
         fi
     fi
 fi
