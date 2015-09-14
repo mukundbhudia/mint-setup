@@ -12,14 +12,14 @@ else
     echo "You entered: $setupType"
     # TODO: Fix '-ne' usage. Need a string comparison operator
 
-    if [ $setupType -ne "work" ] || [ $setupType -ne "home" ]; then
+    if [[ $setupType -ne "work" ]] || [[ $setupType -ne "home" ]]; then
         echo "You must enter either home or work."
     else
         # Generic setup
         OSname=$(lsb_release -si);
         echo "Detected $OSname";
         echo "Installing general software..."
-        if [ $OSname -eq "Debian" ]; then
+        if [[ $OSname -eq "Debian" ]]; then
             apt-get -y install software-properties-common
         fi
         add-apt-repository ppa:git-core/ppa
@@ -95,9 +95,9 @@ else
         git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) %an%Creset' --abbrev-commit"
 
         # Environment specific setup
-        if [ $setupType -eq "work" ]; then
+        if [[ $setupType -eq "work" ]]; then
             echo "Work setup installing..."
-        elif [ $setupType -eq "home" ]; then
+        elif [[ $setupType -eq "home" ]]; then
             echo "Home setup installing..."
 
             apt-get -y install libav-tools
