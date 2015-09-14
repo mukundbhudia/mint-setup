@@ -22,10 +22,10 @@ else
         if [[ $OSname -eq "Debian" ]]; then
             apt-get -y install software-properties-common
         fi
-        add-apt-repository ppa:git-core/ppa
-        add-apt-repository ppa:webupd8team/atom
-        add-apt-repository ppa:webupd8team/sublime-text-2
-        add-apt-repository ppa:danielrichter2007/grub-customizer
+        add-apt-repository -y ppa:git-core/ppa
+        add-apt-repository -y ppa:webupd8team/atom
+        add-apt-repository -y ppa:webupd8team/sublime-text-2
+        add-apt-repository -y ppa:danielrichter2007/grub-customizer
         apt-get update
         apt-get -y install firefox
         apt-get -y install git
