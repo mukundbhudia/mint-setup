@@ -16,7 +16,12 @@ else
         echo "You must enter either home or work."
     else
         # Generic setup
+        OSname=$(lsb_release -si);
+        echo "Detected $OSname";
         echo "Installing general software..."
+        if [ $OSname -eq "Debian" ]; then
+            apt-get -y install software-properties-common
+        fi
         add-apt-repository ppa:git-core/ppa
         add-apt-repository ppa:webupd8team/atom
         add-apt-repository ppa:webupd8team/sublime-text-2
