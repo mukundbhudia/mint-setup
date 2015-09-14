@@ -22,6 +22,7 @@ else
         add-apt-repository ppa:webupd8team/sublime-text-2
         add-apt-repository ppa:danielrichter2007/grub-customizer
         apt-get update
+        apt-get -y install firefox
         apt-get -y install git
         apt-get -y install atom
         apt-get -y install sublime-text
