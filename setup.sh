@@ -43,6 +43,7 @@ else
         apt-get -y install wipe
         apt-get -y install playonlinux
         apt-get -y install filezilla
+        apt-get -y install xfburn
 
         # Configure git and meld
         git config --global diff.tool meld
