@@ -78,6 +78,7 @@ else
         # Install atom packages
         apm install color-picker
         apm install file-icons
+        apm install docblockr
         apm install git-blame
         apm install git-plus
         apm install highlight-line
