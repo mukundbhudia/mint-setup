@@ -44,6 +44,7 @@ else
         apt-get -y install playonlinux
         apt-get -y install filezilla
         apt-get -y install xfburn
+        apt-get -y install gcolor2
 
         # Configure git and meld
         git config --global diff.tool meld
